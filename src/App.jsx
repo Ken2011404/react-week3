@@ -206,11 +206,8 @@ function App() {
       getProducts();
       closeModal();
     } catch (error) {
-      const errorMsg = err.response?.data?.message || err.message;
-      console.error(
-        `${modalType === "edit" ? "更新" : "新增"}失敗：`,
-        errorMsg,
-      );
+      const errorMsg = error.response?.data?.message || err.message;
+      console.log(`${modalType === "edit" ? "更新" : "新增"}失敗：`, errorMsg);
       alert(`${modalType === "edit" ? "更新" : "新增"}失敗：${errorMsg}`);
     }
   };
